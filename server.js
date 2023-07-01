@@ -1,7 +1,15 @@
 const express = require('express')
 const mongoose = require('mongoose')
+
+const journalRoute = require('./routes/journal')
+
 const app = express()
 const PORT = 4000
+
+app.use(express.json())
+
+app.use('/', journalRoute)
+
 app.listen(PORT, () => {
     console.log(`The SF app is listening on ${PORT}`)
 })
