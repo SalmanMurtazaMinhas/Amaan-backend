@@ -3,7 +3,7 @@ const router = express.Router();
 const journalController = require('../controllers/journal');
 const Journal = require('../models/Journal');
 
-router.get('/', journalController.journal_index_get)
+// router.get('/', journalController.journal_index_get)
 
 router.get('/journal/add', journalController.journal_create_get)
 router.post('/journal/add', journalController.journal_create_post)

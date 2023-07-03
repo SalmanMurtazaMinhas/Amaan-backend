@@ -5,6 +5,7 @@ const session = require('express-session')
 const passport = require('./lib/passportConfig')
 
 const journalRoute = require('./routes/journal')
+const moodRoute = require('./routes/mood')
 const authRoute = require('./routes/auth')
 const bookingRoute = require('./routes/bookappointment')
 
@@ -36,6 +37,8 @@ app.use(function(req, res, next){
 
 
 app.use('/', journalRoute)
+app.use('/', moodRoute)
+
 app.use('/', authRoute)
 app.use('/', bookingRoute)
 
