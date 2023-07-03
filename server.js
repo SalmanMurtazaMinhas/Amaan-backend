@@ -6,6 +6,7 @@ const passport = require('./lib/passportConfig')
 
 const journalRoute = require('./routes/journal')
 const authRoute = require('./routes/auth')
+const bookingRoute = require('./routes/bookappointment')
 
 const app = express()
 const PORT = 4000
@@ -36,6 +37,7 @@ app.use(function(req, res, next){
 
 app.use('/', journalRoute)
 app.use('/', authRoute)
+app.use('/', bookingRoute)
 
 app.listen(PORT, () => {
     console.log(`The Mental Health app is listening on ${PORT}`)
