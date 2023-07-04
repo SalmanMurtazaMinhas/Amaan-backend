@@ -1,15 +1,12 @@
 const BookAppointment = require('../models/bookappointment');
 const mongoose = require('mongoose');
 
-
 exports.bookappointment_get = async (req, res) => {
     try {
         res.render('bookappointment/add')
     } catch (error) {
         console.log(error.message)
     }
-
-    
 }
 
 exports.bookappointment_post = (req, res) => {
@@ -37,7 +34,6 @@ exports.bookappointment_index_get = async (req, res) => {
         console.log(error.message)
         res.status(500).json({message: 'Something Went Wrong!'})
     }
-
 
 }
 
