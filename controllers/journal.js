@@ -2,6 +2,7 @@ const Journal = require('../models/Journal');
 const mongoose = require('mongoose');
 
 
+
 exports.journal_create_get = async (req, res) => {
     try {
         res.render('journal/add')
@@ -13,10 +14,11 @@ exports.journal_create_get = async (req, res) => {
 }
 
 exports.journal_create_post = (req, res) => {
+    req.body.user = req.user.id
     console.log(req.body)
-
-
+    
     const journal = new Journal(req.body)
+    console.log(journal)
     journal.save()
         .then(() => {
             console.log('Your journal has been saved')
@@ -29,7 +31,7 @@ exports.journal_create_post = (req, res) => {
 
 exports.journal_index_get = async (req, res) => {
     try{
-        const journals = await Journal.find()
+        const journals = await Journal.find({user:req.user._id})
         console.log(journals)
         res.status(200).json(journals)
 
