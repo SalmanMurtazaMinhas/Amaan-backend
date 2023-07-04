@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const BookAppointmentSchema = new Schema({
+const bookappointmentSchema = new Schema({
 
 	specialist: {
 		type: String,
@@ -23,6 +23,6 @@ const BookAppointmentSchema = new Schema({
 	timestamps: true
 });
 
-const BookAppointment = mongoose.model('Bookappointment', BookAppointmentSchema);
+const BookAppointment = mongoose.model('BookAppointment', bookappointmentSchema);
 
 module.exports = BookAppointment;
