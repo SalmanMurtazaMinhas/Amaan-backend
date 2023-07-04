@@ -14,7 +14,7 @@ const Mood = require('../models/Mood');
 
 exports.mood_create_post = async (req, res) => {
     console.log(req.body)
-
+    req.body.user = req.user
 
     const mood = new Mood(req.body)
     await mood.save()
