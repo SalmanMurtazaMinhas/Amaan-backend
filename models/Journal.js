@@ -17,14 +17,13 @@ const journalSchema = new Schema({
 		type: Date,
 		// required: true,
 		default: Date.now(),
-	}
+	},
 
-	// userID of the journal entry 
-	// userId: {
-	// 	type: Schema.Types.ObjectId,
-	// 	ref: 'User',
-	// 	required: true,
-	// },
+
+	user :{
+		type: mongoose.Schema.Types.ObjectId,  
+		ref: 'User'
+		}
 }, {
 	timestamps: true
 });
