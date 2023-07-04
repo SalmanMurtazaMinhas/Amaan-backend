@@ -23,7 +23,11 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    moods: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Mood'
+    }]
 },{
     timestamps: true
 })
