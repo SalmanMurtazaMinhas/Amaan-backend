@@ -1,4 +1,4 @@
-const BookAppointment = require('../models/bookappointment');
+const BookAppointment = require('../models/BookAppointment');
 const mongoose = require('mongoose');
 
 exports.bookappointment_get = async (req, res) => {
