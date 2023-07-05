@@ -27,7 +27,12 @@ const userSchema = mongoose.Schema({
     moods: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Mood'
+    }],
+    journals: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Journal'
     }]
+    
 },{
     timestamps: true
 })
