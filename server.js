@@ -8,6 +8,7 @@ const journalRoute = require('./routes/journal')
 const moodRoute = require('./routes/mood')
 const authRoute = require('./routes/auth')
 const bookingRoute = require('./routes/bookappointment')
+const specialistRoute = require('./routes/Specialist')
 
 const app = express()
 const PORT = 4000
@@ -41,6 +42,7 @@ app.use('/', moodRoute)
 
 app.use('/', authRoute)
 app.use('/', bookingRoute)
+app.use('/', specialistRoute)
 
 app.listen(PORT, () => {
     console.log(`The Mental Health app is listening on ${PORT}`)
