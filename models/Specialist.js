@@ -10,13 +10,13 @@ const SpecialistSchema = new Schema({
 
 	Role: {
 		type: String,
-		// required: true,
+		required: true,
 	},
 
 	YearsofExperience: {
 		type: Number,
-		// required: true,
-		default: Date.now(),
+		required: true,
+		// default: Date.now(),
 	}
 
 }, {

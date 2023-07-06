@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 const bookappointmentSchema = new Schema({
 
-	specialist: {
-		type: String,
-		required: true,
-	},
+	specialist: [{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Specialist'
+	}],
 
 	time: {
 		type: String,
