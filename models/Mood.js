@@ -3,13 +3,12 @@ const Schema = mongoose.Schema;
 
 const moodSchema = mongoose.Schema({
 
-    iconName: {
+    mood: {
         type: String,
     },
     date: {
-		type: Date,
+		type: String,
 		// required: true,
-		default: Date.now()
 	},
     user :{
 		type: mongoose.Schema.Types.ObjectId,  

@@ -23,7 +23,7 @@ app.use(express.urlencoded({
 }))
 
 app.use(session({
-    secret: 'Thisisasecret!',
+    secret: 'SUPERSECRET',
     saveUninitialized: true,
     resave: false,
     cookie: {maxAge: 86400000}

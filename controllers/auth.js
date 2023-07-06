@@ -22,7 +22,7 @@ exports.auth_signup_post = async (req, res) => {
         user.password = hash
 
         await user.save()
-        res.json({"message": "User created successfully!"})
+        res.status(201).json({"message": "User created successfully!"})
     } catch (error) {
         console.log(error.message)
         res.json({"message": error.message})
