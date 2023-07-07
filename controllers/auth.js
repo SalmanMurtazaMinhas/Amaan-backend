@@ -25,7 +25,7 @@ exports.auth_signup_post = async (req, res) => {
         res.status(201).json({"message": "User created successfully!"})
     } catch (error) {
         console.log(error.message)
-        res.json({"message": error.message})
+        res.status(500).json({"message": error.message})
     }
 }
 
@@ -39,15 +39,15 @@ exports.auth_signin_post = async (req, res) => {
         console.log(user);
     
         if (!user){
-            return res.json({"message": "User not found!"}).status(400);
+            return res.status(400).json({"message": "User not found!"});
         }
     
         const isMatch = await bcrypt.compareSync(password, user.password);
         console.log(password);
         console.log(user.password);
-    
+
         if (!isMatch){
-            return res.json({"message": "Password not matched!"}).status(400);
+            return res.status(406).json({"message": "Password not matched!"});
         }
     
         const payload = {
@@ -68,7 +68,7 @@ exports.auth_signin_post = async (req, res) => {
     
     } catch (error) {
         console.log(error);
-        res.json({"message": "You are not logged in!"}).status(400)
+        res.status(400).json({"message": "You are not logged in!"})
     }
 }
 
