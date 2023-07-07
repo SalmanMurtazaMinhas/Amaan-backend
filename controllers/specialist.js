@@ -1,5 +1,5 @@
 const Specialist = require('../models/Specialist');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
 
 exports.specialist_get = async (req, res) => {
@@ -8,8 +8,6 @@ exports.specialist_get = async (req, res) => {
     } catch (error) {
         console.log(error.message)
     }
-
-    
 }
 
 exports.specialist_post = (req, res) => {
@@ -19,7 +17,7 @@ exports.specialist_post = (req, res) => {
     const specialist = new Specialist(req.body)
     specialist.save()
         .then(() => {
-            console.log('Specialist has been Saveded')
+            console.log('Specialist has been saved!')
             res.status(201).json(specialist)
         })
         .catch((err) => {

@@ -26,7 +26,7 @@ exports.bookappointment_post = (req, res) => {
 
 exports.bookappointment_index_get = async (req, res) => {
     try{
-        const bookappointments = await BookAppointment.find()
+        const bookappointments = await BookAppointment.find().populate('specialist')
         console.log(bookappointments)
         res.status(200).json(bookappointments)
 
