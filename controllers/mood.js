@@ -43,4 +43,3 @@ exports.mood_index_get = async (req, res) => {
 
 
 }
-
