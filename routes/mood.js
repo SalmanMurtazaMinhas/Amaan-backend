@@ -9,6 +9,7 @@ const isLoggedIn = require('../lib/isLoggedIn')
 
 router.post('/mood/add',isLoggedIn, moodController.mood_create_post)
 router.get('/mood/index', moodController.mood_index_get)
+router.get('/mood/last', moodController.mood_last_get)
 
 
 module.exports = router;
