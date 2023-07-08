@@ -33,7 +33,6 @@ exports.mood_create_post = async (req, res) => {
 exports.mood_index_get = async (req, res) => {
     try{
         const moods = await Mood.find()
-        console.log(moods)
         res.status(200).json(moods)
 
     } catch (error) {
@@ -50,7 +49,6 @@ exports.mood_last_get = async (req, res) => {
         let last = moods.length - 1
         const lastMood = moods[last]
 
-        console.log(lastMood)
         res.status(200).json(lastMood)
 
     } catch (error) {
