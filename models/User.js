@@ -31,6 +31,10 @@ const userSchema = mongoose.Schema({
     journals: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Journal'
+    }],
+    supportgroups: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'SupportGroup'
     }]
     
 },{

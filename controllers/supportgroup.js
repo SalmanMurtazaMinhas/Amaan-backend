@@ -26,6 +26,7 @@ exports.group_create_post = (req, res) => {
 exports.group_index_get = async (req, res) => {
     try {
         const supportGroups = await SupportGroup.find()
+        console.log(supportGroups)
         res.status(200).json(supportGroups)
     } catch (error) {
         console.log(error.message)
