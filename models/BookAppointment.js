@@ -5,7 +5,9 @@ const bookappointmentSchema = new Schema({
 
 	specialist: {
 		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Specialist'
+		ref: 'Specialist',
+		required: true,
+
 	},
 
 	time: {
