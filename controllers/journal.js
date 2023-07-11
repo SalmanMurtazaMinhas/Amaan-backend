@@ -31,7 +31,7 @@ exports.journal_create_post = (req, res) => {
 
 exports.journal_index_get = async (req, res) => {
     try{
-        const journals = await Journal.find()
+        const journals = await Journal.find().populate('user')
         console.log(journals)
         res.status(200).json(journals)
 
