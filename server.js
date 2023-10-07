@@ -9,7 +9,7 @@ const journalRoute = require('./routes/journal')
 const moodRoute = require('./routes/mood')
 const authRoute = require('./routes/auth')
 const bookingRoute = require('./routes/bookappointment')
-const specialistRoute = require('./routes/Specialist')
+const specialistRoute = require('./routes/specialist')
 const supportGroupRoute = require('./routes/supportgroup')
 
 const app = express()
