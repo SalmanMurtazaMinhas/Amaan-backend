@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const passport = require('./lib/passportConfig')
+require('dotenv').config()
 
 const journalRoute = require('./routes/journal')
 const moodRoute = require('./routes/mood')
@@ -12,7 +13,7 @@ const specialistRoute = require('./routes/Specialist')
 const supportGroupRoute = require('./routes/supportgroup')
 
 const app = express()
-const PORT = 4000
+const PORT = process.env.PORT
 
 app.use(express.json())
 app.use(express.static('public'))
@@ -24,7 +25,7 @@ app.use(express.urlencoded({
 }))
 
 app.use(session({
-    secret: 'SUPERSECRET',
+    secret: process.env.SECRET,
     saveUninitialized: true,
     resave: false,
     cookie: {maxAge: 86400000}
@@ -50,7 +51,7 @@ app.listen(PORT, () => {
     console.log(`The Mental Health app is listening on ${PORT}`)
 })
 
-mongoose.connect('mongodb+srv://deadmelissajames:AZ3K6OEWsqD3hJ1g@sei4cluster.uwzeppu.mongodb.net/SF',
+mongoose.connect(process.env.MONGODB_URL,
 {
     useNewUrlParser: true,
     useUnifiedTopology: true
